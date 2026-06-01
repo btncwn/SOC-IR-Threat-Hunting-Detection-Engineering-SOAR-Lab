@@ -2,48 +2,49 @@
 
 ## Overview
 
-This repository documents a complete blue-team security lab designed to simulate a realistic attack lifecycle and demonstrate the workflow of a SOC Analyst, Threat Hunter, Detection Engineer, and Incident Responder.
+This repository documents an end-to-end Security Operations Center (SOC) lab built to simulate a realistic cyber attack lifecycle and demonstrate blue-team security operations.
 
-The environment combines vulnerability assessment, attack simulation, endpoint telemetry collection, SIEM monitoring, threat hunting, threat intelligence enrichment, digital forensics, and MITRE ATT&CK mapping.
+The project combines vulnerability management, attack simulation, endpoint telemetry collection, SIEM engineering, threat hunting, MITRE ATT&CK mapping, threat intelligence, and digital forensics to provide practical experience across multiple cybersecurity disciplines.
 
-The goal is to generate real security telemetry, detect adversary activity, investigate incidents, and document findings using industry-standard security tools.
-
-
-
-Key Lab Achievement
-
-A credentialed Nessus assessment identified a critical MS17-010 (EternalBlue) vulnerability on a Windows 7 endpoint. The exposed SMB attack surface was validated through SMB enumeration, monitored using Sysmon telemetry, and analyzed through a custom Splunk SOC dashboard.
-
-
-
-
+The lab was developed using real telemetry collected from a Windows 7 environment and analyzed through Splunk Enterprise.
 
 ---
 
-# Lab Environment
+## Key Achievement
 
-```text
-Attacker Infrastructure
-───────────────────────
-Kali Linux
+A credentialed Nessus vulnerability assessment identified a critical **MS17-010 (EternalBlue)** exposure on a Windows 7 endpoint.
 
-Target Environment
-───────────────────────
-Windows 7 Endpoint
-(Sysmon)
-
-Security Stack
-───────────────────────
-Splunk Enterprise
-Splunk Universal Forwarder
-Nessus
-MISP
-Velociraptor
-```
+The vulnerability was subsequently validated through SMB enumeration activities, monitored through Sysmon telemetry, ingested into Splunk Enterprise, and analyzed through threat hunting and SOC monitoring workflows.
 
 ---
 
-# Attack Flow
+## Lab Environment
+
+### Attacker Infrastructure
+
+* Kali Linux
+
+### Target Environment
+
+* Windows 7 Professional SP1 x64
+* Sysmon
+* Splunk Universal Forwarder
+
+### Security Monitoring Stack
+
+* Splunk Enterprise
+* Nessus Essentials
+* Sysmon
+* Splunk Universal Forwarder
+
+### Planned Integrations
+
+* MISP (Threat Intelligence)
+* Velociraptor (DFIR)
+
+---
+
+## Attack Flow
 
 ```text
 1. Vulnerability Assessment
@@ -56,264 +57,130 @@ Velociraptor
            ↓
 5. Threat Hunting
            ↓
-6. SOC Dashboard Monitoring
+6. MITRE ATT&CK Mapping
            ↓
 7. Threat Intelligence Enrichment
            ↓
-8. DFIR Investigation
+8. Digital Forensics & Incident Response
            ↓
-9. MITRE ATT&CK Mapping
-           ↓
-10. Incident Reporting
+9. Incident Reporting
 ```
 
 ---
 
-# Technologies Used
+## Technologies Used
 
 | Technology                 | Purpose                            |
 | -------------------------- | ---------------------------------- |
-| Splunk Enterprise          | SIEM, threat hunting, dashboarding |
-| Sysmon                     | Endpoint telemetry                 |
-| Splunk Universal Forwarder | Log collection and forwarding      |
-| Kali Linux                 | Adversary simulation               |
-| Nessus                     | Vulnerability assessment           |
-| MISP                       | Threat intelligence platform       |
-| Velociraptor               | DFIR and endpoint investigation    |
-| MITRE ATT&CK               | Adversary behavior mapping         |
+| Splunk Enterprise          | SIEM, Threat Hunting, Dashboarding |
+| Sysmon                     | Endpoint Telemetry                 |
+| Splunk Universal Forwarder | Log Collection & Forwarding        |
+| Kali Linux                 | Attack Simulation                  |
+| Nessus Essentials          | Vulnerability Assessment           |
+| MITRE ATT&CK               | Adversary Behavior Mapping         |
+| MISP                       | Threat Intelligence (Planned)      |
+| Velociraptor               | DFIR Investigations (Planned)      |
 
 ---
 
-# Repository Structure
+## Repository Structure
 
 ```text
-SOC-Detection-Engineering-Threat-Hunting-Lab/
+SOC-Detection-Engineering-Threat-Hunting-DFIR-Lab
 
 ├── 01-lab-architecture
-│
 ├── 02-vulnerability-assessment
-│   ├── nessus-scans
-│   ├── vulnerability-analysis
-│   └── remediation-recommendations
-│
 ├── 03-attack-simulation
-│   ├── smb-enumeration
-│   ├── network-reconnaissance
-│   ├── powershell-execution
-│   ├── remote-execution-simulation
-│   └── attack-scenarios
-│
 ├── 04-endpoint-telemetry
-│   ├── sysmon-installation
-│   ├── sysmon-configuration
-│   └── event-analysis
-│
 ├── 05-splunk-ingestion
-│   ├── universal-forwarder
-│   ├── inputs-conf
-│   ├── index-configuration
-│   └── data-validation
-│
 ├── 06-threat-hunting
-│   ├── process-analysis
-│   ├── powershell-hunting
-│   ├── parent-child-analysis
-│   ├── suspicious-activity
-│   └── spl-searches
-│
-├── 07-soc-dashboard
-│   ├── attack-timeline
-│   ├── kpis
-│   ├── visualizations
-│   └── dashboard-screenshots
-│
+├── 07-mitre-attack-mapping
 ├── 08-threat-intelligence
-│   ├── misp
-│   ├── ioc-enrichment
-│   └── threat-context
-│
 ├── 09-dfir
-│   ├── velociraptor
-│   ├── triage
-│   ├── artifact-collection
-│   └── investigations
-│
-├── 10-mitre-attack-mapping
-│   ├── tactics
-│   ├── techniques
-│   └── detections
-│
-├── 11-incident-report
-│   ├── executive-summary
-│   ├── timeline
-│   ├── findings
-│   └── lessons-learned
-│
-├── screenshots
-└── reports
+├── 10-incident-report
 ```
 
 ---
 
-# Phase 1 – Vulnerability Assessment
+## Project Highlights
 
-Nessus is used to identify weaknesses within the Windows endpoint.
+### Vulnerability Assessment
 
-Assessment activities include:
+* Credentialed Nessus Scan
+* 550 Findings Identified
+* 52 Critical Vulnerabilities
+* 326 High Vulnerabilities
+* MS17-010 (EternalBlue) Detection
 
-* Missing security patches
-* Legacy operating system exposure
-* SMB misconfigurations
-* Unsupported software
-* Security hardening recommendations
+### Attack Simulation
 
-Deliverables:
+* SMB Enumeration
+* Service Discovery
+* Exposure Validation
+* Attack Surface Analysis
 
-* Nessus scan reports
-* Vulnerability prioritization
-* Remediation recommendations
+### Endpoint Telemetry
 
----
+* Sysmon Deployment
+* Process Monitoring
+* PowerShell Monitoring
+* Parent-Child Process Analysis
 
-# Phase 2 – Attack Simulation
+### SIEM Engineering
 
-Attack activity is generated from Kali Linux to create realistic security telemetry.
+* Splunk Enterprise Deployment
+* Splunk Universal Forwarder Configuration
+* Sysmon Log Ingestion
+* XML Event Parsing & Field Extraction
 
-Examples include:
+### Threat Hunting
 
-### Discovery
+* Process Analysis
+* PowerShell Hunting
+* Command-Line Investigation
+* Behavioral Analysis
 
-* Host discovery
-* Service enumeration
-* SMB reconnaissance
+### MITRE ATT&CK Mapping
 
-### Execution
+Mapped Techniques Include:
 
-* Command shell execution
-* PowerShell activity
-* Process creation events
-
-### Lateral Movement Simulation
-
-* SMB authentication attempts
-* Remote execution patterns
-* PsExec-style behavioral simulations
-
----
-
-# Phase 3 – Endpoint Telemetry
-
-Sysmon provides detailed endpoint visibility including:
-
-* Process creation
-* Process termination
-* File creation
-* Network connections
-* Parent-child relationships
-* PowerShell execution
+* T1046 – Network Service Discovery
+* T1018 – Remote System Discovery
+* T1021.002 – SMB / Windows Admin Shares
+* T1059.001 – PowerShell
+* T1059.003 – Windows Command Shell
+* T1210 – Exploitation of Remote Services
 
 ---
 
-# Phase 4 – SIEM Ingestion
-
-Splunk Enterprise receives and analyzes telemetry through Splunk Universal Forwarder.
-
-Collected logs include:
-
-* Sysmon Operational Logs
-* Security Logs
-* System Logs
-
----
-
-# Phase 5 – Threat Hunting
-
-Threat hunting scenarios include:
-
-* Suspicious PowerShell execution
-* Parent-child process anomalies
-* Living-off-the-Land Binary activity
-* Unexpected process relationships
-* Behavioral investigations
-
----
-
-# Phase 6 – SOC Dashboard
-
-A custom Splunk SOC Dashboard was developed to visualize attack activity.
-
-Features include:
-
-* Total Sysmon Events
-* Process Creation Monitoring
-* Attack Timeline
-* PowerShell Activity
-* Top Executed Processes
-* Parent → Child Process Relationships
-* Suspicious Process Activity
-* Event Volume Monitoring
-
----
-
-# Phase 7 – Threat Intelligence
-
-MISP is used to enrich investigations with threat intelligence.
-
-Capabilities include:
-
-* IOC management
-* Threat enrichment
-* ATT&CK alignment
-* Investigation context
-
----
-
-# Phase 8 – Digital Forensics & Incident Response
-
-Velociraptor supports endpoint investigations through:
-
-* Rapid triage
-* Artifact collection
-* Host analysis
-* Incident response workflows
-
----
-
-# Phase 9 – MITRE ATT&CK Mapping
-
-Detections and attack simulations are mapped to MITRE ATT&CK techniques.
-
-Examples:
-
-| Tactic            | Technique                             |
-| ----------------- | ------------------------------------- |
-| Discovery         | T1046 Network Service Discovery       |
-| Discovery         | T1087 Account Discovery               |
-| Execution         | T1059 PowerShell                      |
-| Execution         | T1059.003 Windows Command Shell       |
-| Lateral Movement  | T1021 SMB                             |
-| Lateral Movement  | T1569 Service Execution               |
-
----
-
-# Skills Demonstrated
+## Skills Demonstrated
 
 * SOC Operations
 * Detection Engineering
 * Threat Hunting
-* Incident Response
-* Digital Forensics
+* SIEM Administration
 * Vulnerability Management
-* Threat Intelligence
-* MITRE ATT&CK Mapping
-* SIEM Engineering
 * Endpoint Monitoring
 * Security Investigation
+* Incident Response
+* MITRE ATT&CK Mapping
+* Log Analysis
 
 ---
 
-# Disclaimer
+## Future Enhancements
+
+* MISP Threat Intelligence Integration
+* IOC Enrichment Workflows
+* Velociraptor DFIR Investigations
+* ATT&CK Coverage Expansion
+* Additional Detection Engineering Use Cases
+
+---
+
+## Disclaimer
 
 This repository was created for cybersecurity education, portfolio development, detection engineering practice, and defensive security research.
 
 All testing was performed within authorized and isolated laboratory environments.
+
