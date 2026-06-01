@@ -76,3 +76,24 @@ Behavioral telemetry remains the primary basis for assessing hdoor.exe as suspic
 
 This investigation demonstrates that threat intelligence enrichment supports investigative workflows but should not be considered a replacement for endpoint, process, and network analysis.
 
+
+## Investigation Outcome
+
+Threat intelligence enrichment was performed against indicators collected during Investigation 03.
+
+The SHA256 hash associated with hdoor.exe was searched within MISP following synchronization of the CIRCL OSINT feed.
+
+Additional searches were performed using:
+
+* hdoor.exe
+* hdoor
+
+No matching events, attributes, malware families, or threat actor references were identified.
+
+As a result, no threat intelligence attribution could be established for the observed executable.
+
+The investigation therefore relied on behavioral evidence collected through Sysmon, Cisco NVM telemetry, and Splunk analysis.
+
+The absence of threat intelligence matches does not indicate benign activity. Instead, the executable should be treated as an unknown indicator requiring behavioral analysis and continued monitoring.
+
+
