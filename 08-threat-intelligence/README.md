@@ -24,7 +24,7 @@ This section demonstrates how threat intelligence can be operationalized within 
 
 ### Infrastructure
 
-* Windows 11 Endpoint
+* Windows 7 Endpoint
 * Kali Linux Attack Platform
 * Splunk Enterprise
 * Sysmon Telemetry
