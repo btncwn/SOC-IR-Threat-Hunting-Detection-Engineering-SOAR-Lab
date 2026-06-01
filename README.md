@@ -8,6 +8,16 @@ The environment combines vulnerability assessment, attack simulation, endpoint t
 
 The goal is to generate real security telemetry, detect adversary activity, investigate incidents, and document findings using industry-standard security tools.
 
+
+
+Key Lab Achievement
+
+A credentialed Nessus assessment identified a critical MS17-010 (EternalBlue) vulnerability on a Windows 7 endpoint. The exposed SMB attack surface was validated through SMB enumeration, monitored using Sysmon telemetry, and analyzed through a custom Splunk SOC dashboard.
+
+
+
+
+
 ---
 
 # Lab Environment
