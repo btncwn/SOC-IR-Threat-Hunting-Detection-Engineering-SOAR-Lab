@@ -104,7 +104,7 @@ This activity generated realistic reconnaissance telemetry that can be monitored
 
 ### SMB Enumeration Results
 
-![SMB Enumeration](screenshots/smb-enumeration-and-service-discovery.png)
+screenshots/smb-enumeration-and-service-discovery.png
 
 ---
 
