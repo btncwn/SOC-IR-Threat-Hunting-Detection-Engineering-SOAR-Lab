@@ -1,4 +1,4 @@
-[Home](index.md) | [About](about.md) | [Certifications](certifications.md) | [Projects](projects.md)
+[Home](index.md) | [About](about.md) | [Certifications](certifications.md) | [Projects](projects.md) | [Contact](contact.md)
 
 ---
 # Turhan Acar
