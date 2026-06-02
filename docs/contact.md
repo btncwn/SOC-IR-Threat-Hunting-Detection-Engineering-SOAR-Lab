@@ -1,12 +1,3 @@
-
----
-
-# Contact
-
-## Turhan Acar
-
-Cybersecurity portfolio focused on SOC Operations, Threat Hunting, Threat Intelligence, DFIR, Detection Engineering, and Security Automation.
-
 ## Professional Profiles
 
 ### GitHub
