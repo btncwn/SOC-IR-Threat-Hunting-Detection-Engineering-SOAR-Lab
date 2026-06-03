@@ -177,6 +177,12 @@ Status:
 ```text
 VALIDATED
 ```
+## Scheduled Task Persistence Validation
+
+The detection was validated against the BOTSv3 dataset using the following search:
+
+```spl
+index=botsv3 "schtasks.exe" "/Create" "IEX"
 
 ---
 
@@ -195,6 +201,7 @@ change frequently.
 Behavioral detections remain effective because they focus on attacker actions rather than attacker infrastructure.
 
 ---
+
 
 # Detection Engineering Conclusion
 
