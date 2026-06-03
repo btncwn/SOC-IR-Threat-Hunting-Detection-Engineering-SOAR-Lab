@@ -149,21 +149,48 @@ SYSTEM Execution
 Hidden PowerShell Activity
 ```
 
+## 05 – Threat Intelligence Driven Detection
+
+Transformation of threat intelligence associated with the Space Pirates threat actor and PlugX Remote Access Trojan (RAT) into behavioral detections.
+
+Rather than focusing solely on indicators of compromise such as file hashes, domains, or IP addresses, the project demonstrates how threat intelligence can be operationalized into durable behavioral detections.
+
+Threat intelligence analysis identified attacker capabilities including:
+
+```text
+PowerShell Execution
+Scheduled Task Creation
+Service Manipulation
+Network Discovery
+System Discovery
+```
+
+These behaviors were mapped to MITRE ATT&CK techniques and translated into Sigma detection rules.
+
+The Sigma rules were converted into Splunk SPL using PySigma and validated against available laboratory telemetry.
+
+The project demonstrates how intelligence can be transformed into reusable detection content suitable for SOC monitoring, threat hunting, and detection engineering programs.
+
 ### Skills Demonstrated
 
-* Threat Hunting
+* Threat Intelligence Analysis
 * Detection Engineering
 * Sigma Rule Development
 * PySigma Conversion
-* Splunk Validation
+* Splunk Detection Validation
+* MITRE ATT&CK Mapping
+* Behavioral Detection Development
 * Detection Tuning
-* Process Analysis
-* ATT&CK Mapping
+* Adversary Tradecraft Analysis
 
 ### ATT&CK Mapping
 
-* T1053.005 – Scheduled Task
 * T1059.001 – PowerShell
+* T1053.005 – Scheduled Task
+* T1046 – Network Service Discovery
+* T1049 – System Network Connections Discovery
+* T1018 – Remote System Discovery
+* T1543.003 – Windows Service
 * T1027 – Obfuscated Files or Information
 
 ---
@@ -173,6 +200,7 @@ Hidden PowerShell Activity
 Through these projects, the following detection engineering concepts were demonstrated:
 
 * Threat Hunting Driven Detection Development
+* Threat Intelligence Driven Detection Development
 * Sigma Rule Authoring
 * Cross-Platform Detection Portability
 * PySigma Query Translation
@@ -182,12 +210,17 @@ Through these projects, the following detection engineering concepts were demons
 * MITRE ATT&CK Mapping
 * Process Creation Analysis
 * Adversary Behavior Identification
+* Intelligence Operationalization
 
 ---
 
 # Conclusion
 
-This section demonstrates the complete lifecycle of modern detection engineering, from threat hunting and telemetry analysis through Sigma development, PySigma conversion, Splunk integration, validation, and ATT&CK mapping.
+This section demonstrates the complete lifecycle of modern detection engineering, from threat hunting and telemetry analysis through threat intelligence review, ATT&CK mapping, Sigma development, PySigma conversion, Splunk integration, validation, and detection tuning.
 
-Rather than relying solely on predefined signatures, detections were developed from real telemetry and validated through investigative analysis, closely reflecting the workflows used by SOC Analysts, Threat Hunters, and Detection Engineers in operational environments.
+A key lesson throughout the projects was:
+
+> Hashes change. IPs change. Domains change. Behaviors persist.
+
+Rather than relying solely on static indicators of compromise, detections were developed from observable adversary behaviors and validated through investigative analysis, closely reflecting the workflows used by SOC Analysts, Threat Hunters, Detection Engineers, and Threat Intelligence teams in operational environments.
 
