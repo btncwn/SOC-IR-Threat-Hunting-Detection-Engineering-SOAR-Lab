@@ -1,0 +1,30 @@
+title: Suspicious Scheduled Task Creation via PowerShell
+id: 7d2c5b41-5f67-4f2c-8e2a-9d4a8f2e1c11
+status: experimental
+description: Detects PowerShell spawning schtasks.exe to create a scheduled task.
+
+logsource:
+  product: windows
+  category: process_creation
+
+detection:
+  selection:
+    keywords:
+      - powershell.exe
+      - schtasks.exe
+      - /Create
+  condition: selection
+
+falsepositives:
+  - Administrative task creation
+  - Software deployment activities
+
+level: high
+
+tags:
+  - attack.persistence
+  - attack.t1053.005
+  - attack.execution
+  - attack.t1059.001
+  - attack.defense_evasion
+  - attack.t1027
