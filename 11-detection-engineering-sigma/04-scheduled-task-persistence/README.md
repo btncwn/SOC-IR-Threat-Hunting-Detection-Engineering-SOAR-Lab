@@ -427,6 +427,116 @@ The project showcases:
 
 Multiple candidate techniques were investigated and ruled out before identifying a high-confidence detection opportunity involving PowerShell-driven scheduled task creation.
 
+# Key Detection Engineering Takeaways
+
+This project demonstrates the complete lifecycle of a detection engineering workflow.
+
+The investigation progressed through the following stages:
+
+### 1. Threat Hunting
+
+Initial Splunk searches were used to identify suspicious scheduled task creation activity within the BOTSv3 dataset.
+
+Threat hunting identified an event involving:
+
+```text
+PowerShell
+      ↓
+schtasks.exe
+      ↓
+Scheduled Task Creation
+```
+
+This activity was selected as a candidate detection.
+
+---
+
+### 2. Sigma Rule Development
+
+The observed behavior was translated into a Sigma detection rule.
+
+Rather than creating a Splunk-specific search, the detection was written using Sigma's platform-independent format.
+
+The Sigma rule focused on:
+
+* Parent Process = powershell.exe
+* Child Process = schtasks.exe
+* Command Line contains /Create
+
+This transformed a single threat hunting finding into a reusable detection.
+
+---
+
+### 3. PySigma Conversion
+
+The Sigma rule was converted into Splunk SPL using PySigma.
+
+Command used:
+
+```bash
+sigma convert -t splunk --without-pipeline \
+11-detection-engineering-sigma/04-scheduled-task-persistence/sigma-rule.yml
+```
+
+Generated SPL:
+
+```spl
+ParentImage="*\\powershell.exe" Image="*\\schtasks.exe" CommandLine="*/Create*"
+```
+
+This demonstrated that the Sigma rule could successfully be translated into Splunk search syntax.
+
+---
+
+### 4. Splunk Validation
+
+The generated detection was validated against real BOTSv3 telemetry.
+
+During validation it was discovered that process creation fields were embedded within raw XML data rather than being extracted as searchable fields.
+
+Additional tuning was required to validate the detection against the dataset.
+
+Validation confirmed that all Sigma conditions matched a real Sysmon process creation event.
+
+---
+
+### 5. Detection Outcome
+
+The final detection successfully identified:
+
+```text
+PowerShell
+      ↓
+schtasks.exe
+      ↓
+Task Creation
+      ↓
+SYSTEM Execution
+      ↓
+Hidden PowerShell Activity
+```
+
+The event was assessed as a high-confidence persistence mechanism consistent with attacker tradecraft.
+
+---
+
+## Summary
+
+In simple terms:
+
+```text
+Splunk search found the event.
+        ↓
+Sigma rule transformed the finding into a reusable detection.
+        ↓
+PySigma converted the detection into Splunk SPL.
+        ↓
+Splunk validation proved the detection worked against real BOTSv3 telemetry.
+```
+
+This process represents the core workflow used by Detection Engineers when transforming threat hunting discoveries into production-ready security detections.
+
+
 ---
 
 # Conclusion
