@@ -1,0 +1,29 @@
+title: Listening Port Discovery via Netstat
+id: 3e2f7a91-c4d1-4d18-a7c2-9f8c1a7d5e22
+status: experimental
+description: Detects enumeration of listening network services using netstat and findstr.
+
+logsource:
+  product: windows
+  category: process_creation
+
+detection:
+  selection_findstr:
+    Image|endswith:
+      - '\findstr.exe'
+    CommandLine|contains:
+      - 'LISTENING'
+  selection_netstat:
+    CommandLine|contains:
+      - 'netstat -nao'
+  condition: selection_findstr or selection_netstat
+
+falsepositives:
+  - Network diagnostics
+  - Administrative troubleshooting
+
+level: medium
+
+tags:
+  - attack.discovery
+  - attack.t1049
