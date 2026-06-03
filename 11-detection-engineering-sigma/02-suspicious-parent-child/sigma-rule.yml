@@ -1,0 +1,30 @@
+title: Suspicious Fodhelper PowerShell Execution
+id: 6f8a9d31-bf6d-4cb0-a95e-5a8a1f4d7e91
+status: experimental
+description: Detects PowerShell launched by fodhelper.exe.
+
+logsource:
+product: windows
+category: process_creation
+
+detection:
+selection:
+ParentImage|endswith:
+- '\fodhelper.exe'
+Image|endswith:
+- '\powershell.exe'
+condition: selection
+
+falsepositives:
+
+* Administrative testing
+* Lab simulations
+
+level: high
+
+tags:
+
+* attack.execution
+* attack.t1059.001
+* attack.t1548
+* attack.t1548.002
