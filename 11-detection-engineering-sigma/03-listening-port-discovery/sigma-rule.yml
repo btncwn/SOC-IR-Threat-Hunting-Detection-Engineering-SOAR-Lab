@@ -1,19 +1,19 @@
-title: Listening Port Discovery via Netstat Raw XML
+title: Listening Port Discovery via Netstat
 id: 3e2f7a91-c4d1-4d18-a7c2-9f8c1a7d5e22
 status: experimental
-description: Detects listening port discovery activity in raw Sysmon XML events using netstat and findstr.
+description: Detects listening port discovery activity using netstat and findstr.
 logsource:
   product: windows
   category: process_creation
 detection:
-  selection_raw_findstr:
-    _raw|contains|all:
-      - "findstr"
-      - "LISTENING"
-  selection_raw_netstat:
-    _raw|contains:
-      - "netstat -nao"
-  condition: selection_raw_findstr or selection_raw_netstat
+  selection_findstr:
+    keywords:
+      - findstr
+      - LISTENING
+  selection_netstat:
+    keywords:
+      - netstat -nao
+  condition: selection_findstr or selection_netstat
 falsepositives:
   - Network diagnostics
   - Administrative troubleshooting
