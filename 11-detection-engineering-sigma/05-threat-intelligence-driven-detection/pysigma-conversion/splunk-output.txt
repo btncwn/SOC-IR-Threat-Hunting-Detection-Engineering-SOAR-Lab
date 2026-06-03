@@ -1,0 +1,23 @@
+========================================
+powershell-encoded-command.yml
+========================================
+
+Image="*\\powershell.exe" CommandLine IN ("*-enc*", "*-encodedcommand*")
+
+========================================
+suspicious-scheduled-task.yml
+========================================
+
+Image="*\\schtasks.exe" CommandLine="*/Create*" CommandLine IN ("*powershell*", "*-W hidden*", "*-NonI*", "*IEX*")
+
+========================================
+network-enumeration.yml
+========================================
+
+CommandLine IN ("*netstat*", "*LISTENING*", "*192.168.*", "*-hbs*")
+
+========================================
+service-discovery.yml
+========================================
+
+(Image="*\\sc.exe" CommandLine IN ("* query*", "* create*", "* config*", "* start*")) OR Image="*\\wmic.exe"
