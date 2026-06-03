@@ -12,51 +12,93 @@ The lab was developed using real telemetry collected from a Windows 7 environmen
 
 ## Key Achievement
 
-A credentialed Nessus vulnerability assessment identified a critical **MS17-010 (EternalBlue)** exposure on a Windows 7 endpoint.
+Designed and built a complete SOC Detection Engineering, Threat Hunting, Threat Intelligence, and DFIR lab from the ground up using Splunk Enterprise, Sysmon, Nessus Essentials, MISP, Sigma, and the BOTSv3 dataset.
 
-The vulnerability was subsequently validated through SMB enumeration activities, monitored through Sysmon telemetry, ingested into Splunk Enterprise, and analyzed through threat hunting and SOC monitoring workflows.
+During the project, multiple technical challenges were encountered and resolved. Initial attempts to forward Windows event logs from a Windows 11 UTM virtual machine to a Splunk Enterprise instance running on macOS were unsuccessful, requiring redesign of the lab architecture. To overcome compatibility and telemetry collection issues, the environment was rebuilt using a dedicated Windows 7 endpoint and a Kali Linux attacker system.
+
+Successfully deployed and configured Sysmon and Splunk Universal Forwarder on legacy Windows infrastructure, generated endpoint telemetry, and validated successful ingestion into Splunk Enterprise for security monitoring and threat hunting activities.
+
+Conducted vulnerability assessments using Nessus Essentials, identified a critical MS17-010 (EternalBlue) exposure, validated the findings through SMB enumeration activities, and analyzed resulting telemetry through Splunk-based investigations.
+
+Developed structured threat hunting investigations covering malicious domains, malicious IP addresses, malware hashes, suspicious PowerShell activity, and attacker behavior analysis. Enhanced investigations through MISP integration, IOC enrichment, and threat intelligence-driven hunting workflows.
+
+Mapped observed adversary activity to the MITRE ATT&CK framework, performed DFIR analysis, documented incident response findings, and developed Sigma-based detections that were validated against real telemetry within the lab environment.
+
+The project demonstrates the ability to design, build, troubleshoot, and operate an end-to-end SOC environment while integrating vulnerability management, telemetry engineering, threat hunting, threat intelligence, detection engineering, DFIR, and security operations workflows.
+
 
 ---
 
 ## Lab Environment
 
+
 ### Attacker Infrastructure
 
 * Kali Linux
+* Attack Simulation & Adversary Emulation
 
-### Target Environment
+### Endpoint Infrastructure
 
-* Windows 7 Professional SP1 x64
-* Sysmon
+* Windows 7
+* Sysmon Telemetry Collection
 * Splunk Universal Forwarder
 
-### Security Monitoring Stack
+### Security Monitoring & Detection Stack
 
 * Splunk Enterprise
-* Nessus Essentials
 * Sysmon
+* Sigma Detection Rules
 * Splunk Universal Forwarder
 
-### Planned Integrations
+### Vulnerability Management
 
-* MISP (Threat Intelligence)
-* Velociraptor (DFIR)
+* Nessus Essentials
+* Vulnerability Assessment & Remediation Workflows
+
+### Threat Intelligence Platform
+
+* MISP
+* IOC Management & Threat Intelligence Enrichment
+
+### Security Automation (SOAR)
+
+* Shuffle SOAR
+* Automated Investigation & Response Workflows
+
+### DFIR & Investigation
+
+* Incident Response Playbooks
+* Endpoint Investigation Workflows
+* Digital Forensics & Evidence Analysis
+
+### Detection Engineering
+
+* Sigma Rule Development
+* Splunk Detection Development
+* MITRE ATT&CK Mapping
+* Detection Validation & Tuning
 
 ---
 
 
 ## Technologies Used
 
-| Technology                 | Purpose                            |
-| -------------------------- | ---------------------------------- |
-| Splunk Enterprise          | SIEM, Threat Hunting, Dashboarding |
-| Sysmon                     | Endpoint Telemetry                 |
-| Splunk Universal Forwarder | Log Collection & Forwarding        |
-| Kali Linux                 | Attack Simulation                  |
-| Nessus Essentials          | Vulnerability Assessment           |
-| MITRE ATT&CK               | Adversary Behavior Mapping         |
-| MISP                       | Threat Intelligence (Planned)      |
-| Velociraptor               | DFIR Investigations (Planned)      |
+
+| Technology                     | Purpose                                                           |
+| ------------------------------ | ----------------------------------------------------------------- |
+| Splunk Enterprise              | SIEM Platform, Security Monitoring, Threat Hunting & Dashboarding |
+| Sysmon                         | Endpoint Telemetry & Process Monitoring                           |
+| Splunk Universal Forwarder     | Log Collection & Event Forwarding                                 |
+| Kali Linux                     | Attack Simulation & Adversary Emulation                           |
+| Windows 7 Professional SP1 x64 | Target Environment                                                |
+| Nessus Essentials              | Vulnerability Assessment & Exposure Validation                    |
+| MITRE ATT&CK                   | Adversary Behavior Mapping & Detection Coverage                   |
+| MISP                           | Threat Intelligence Platform, IOC Enrichment & Threat Hunting     |
+| BOTSv3 Dataset                 | Detection Validation & Threat Hunting Exercises                   |
+| Sigma                          | Detection Engineering & Portable Detection Development            |
+| GitHub Pages                   | Cybersecurity Portfolio & Project Documentation                   |
+| SOAR Workflows                 | Security Automation & Playbook Development (In Progress)          |
+| Velociraptor                   | DFIR Investigations (Planned Future Integration)                  |
 
 ---
 
@@ -133,26 +175,35 @@ Mapped Techniques Include:
 
 ## Skills Demonstrated
 
-* SOC Operations
-* Detection Engineering
-* Threat Hunting
-* SIEM Administration
-* Vulnerability Management
-* Endpoint Monitoring
-* Security Investigation
-* Incident Response
+* Security Operations Center (SOC) Operations
+* Threat Hunting & Investigation
+* Detection Engineering (Sigma)
+* SIEM Administration (Splunk Enterprise)
+* Vulnerability Assessment & Exposure Validation
+* Endpoint Monitoring & Telemetry Analysis
+* Threat Intelligence & IOC Enrichment (MISP)
 * MITRE ATT&CK Mapping
-* Log Analysis
+* Incident Response & DFIR Methodology
+* Security Event Analysis & Correlation
+* PowerShell & Process Analysis
+* Log Collection, Parsing & Forwarding
+* Detection Validation & Tuning
+* Security Reporting & Documentation
 
 ---
 
 ## Future Enhancements
+* SOAR Playbook Development & Automation
+* Threat Intelligence Automated Enrichment Workflows
+* Velociraptor DFIR Integration
+* Advanced Sigma Detection Engineering Use Cases
+* Splunk Enterprise Security (ES) Use Cases
+* Detection Coverage Expansion Across Additional ATT&CK Techniques
+* Automated Alert Triage & Investigation Workflows
+* Custom Threat Hunting Dashboards
+* Elastic Security Detection & Threat Hunting Lab
+* Microsoft Sentinel Detection Engineering Lab
 
-* MISP Threat Intelligence Integration
-* IOC Enrichment Workflows
-* Velociraptor DFIR Investigations
-* ATT&CK Coverage Expansion
-* Additional Detection Engineering Use Cases
 
 ---
 
