@@ -89,6 +89,8 @@ Analyst Assessment
 
 The SHA256 hash was searched within MISP using both manual investigation techniques and a Python-based automation script developed using PyMISP.
 
+![MISP Hash Match](screenshots/01-misp-hash-enrichment.png)
+
 ### Result
 
 ```text
@@ -121,6 +123,8 @@ MISP enrichment provided campaign context and malware-related intelligence that 
 
 The IOC was successfully enriched through a Python-based automation script using the MISP API and PyMISP.
 
+![Python MISP Automation](screenshots/02-python-misp-enrichment.png)
+
 ### Workflow
 
 ```text
@@ -144,17 +148,15 @@ This demonstrated how threat intelligence enrichment can be automated to reduce 
 
 ---
 
-# Source 3 – External Intelligence Validation
+### 3. VirusTotal Validation
 
-To validate the intelligence obtained from MISP, the indicator was researched using additional intelligence platforms.
+The hash was validated against VirusTotal.
 
-## VirusTotal
+No security vendors detected the sample as malicious.
 
-### Result
+This demonstrates that threat intelligence can identify indicators that may not yet be detected by commercial antivirus engines.
 
-```text
-No security vendors flagged this file as malicious.
-```
+![VirusTotal Validation](screenshots/03-virustotal-no-detection.png)
 
 ### Assessment
 
@@ -242,6 +244,8 @@ www.0077.x24hr.com
 The report noted that this infrastructure directly intersected with MyKLoadClient command-and-control infrastructure.
 
 This demonstrates how a single IOC can be used to pivot into broader malware families, campaign infrastructure, and threat actor activity.
+
+![Space Pirates IOC Confirmation](screenshots/05-space-pirates-ioc-confirmation.png)
 
 ---
 
