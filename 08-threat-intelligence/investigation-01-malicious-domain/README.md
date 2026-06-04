@@ -49,7 +49,7 @@ Analysis revealed repeated HTTP POST requests to suspicious PHP filenames. An ad
 
 The source IP repeatedly attempted to access PHP files commonly associated with web shells and publicly available scanner wordlists.
 
-![Web-Shell Probes](01-webshell-probes.png)
+![Web-Shell Probes](screenshots/01-webshell-probes.png)
 
 ---
 
@@ -57,7 +57,7 @@ The source IP repeatedly attempted to access PHP files commonly associated with 
 
 The majority of requests were HTTP POST requests. All observed requests returned HTTP 404 responses, indicating the requested resources were not present on the server.
 
-![HTTP Method Analysis](02-http-method-analysis.png)
+![HTTP Method Analysis](screenshots/02-http-method-analysis.png)
 
 ---
 
@@ -90,7 +90,6 @@ The attacker also issued a PROPFIND request against a WebDAV path.
 All observed requests resulted in HTTP 404 responses, indicating the requested resources were not present on the server.
 
 No evidence of successful compromise was identified during this investigation.
-
 
 
 
