@@ -43,19 +43,33 @@ Analysis revealed repeated HTTP POST requests to suspicious PHP filenames. An ad
 
 ---
 
+
 ## Evidence
 
 ### Web-Shell Probing Activity
 
-![Web-Shell Probes](01-webshell-probes.png)
+Analysis of HTTP traffic identified repeated requests targeting PHP files commonly associated with web shells and backdoors.
 
-The source IP repeatedly attempted to access PHP files commonly associated with web shells and publicly available scanner wordlists.
+Examples observed:
+
+- cmd.php
+- ak47.php
+- qq.php
+- qaq.php
+- 9678.php
+
+The requests originated from external IP addresses and targeted a public-facing AWS EC2 web server.
+
+![Web-Shell Probes](screenshots/01-webshell-probes.png)
+
+---
 
 ### HTTP Method Analysis
 
-![HTTP Method Analysis](02-http-method-analysis.png)
+The primary source IP identified during the investigation was:
 
-The majority of requests were HTTP POST requests. All observed requests returned HTTP 404 responses, indicating the requested resources were not present on the server.
+```text
+61.75.35.114
 
 ---
 
