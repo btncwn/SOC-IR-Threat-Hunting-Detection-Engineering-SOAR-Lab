@@ -12,7 +12,7 @@ I build and maintain hands-on security laboratories designed to simulate real-wo
 
 My work combines threat hunting, threat intelligence, digital forensics, and detection engineering to transform raw telemetry into actionable security insights.
 
-Through practical projects involving Splunk, Sysmon, Sigma, PySigma, MISP, MITRE ATT&CK, and DFIR methodologies, I continuously develop and validate security detections based on real adversary behaviors.
+Through practical projects involving Splunk, Sysmon, Sigma, PySigma, MISP, MITRE ATT&CK, and IR methodologies, I continuously develop and validate security detections based on real adversary behaviors.
 
 ---
 
