@@ -114,3 +114,79 @@ Hidden PowerShell
 ```
 
 This workflow demonstrates how scheduled task detections can be transformed into structured SOC investigations supporting incident response and threat hunting operations.
+
+
+
+# Scheduled Task Investigation Workflow
+
+```text
+SOC Alert
+      ↓
+Scheduled Task Created
+      ↓
+Command Line Review
+      ↓
+PowerShell Analysis
+      ↓
+Persistence Assessment
+      ↓
+Risk Scoring
+      ↓
+Analyst Decision
+```
+
+## Investigation Questions
+
+### Was a scheduled task created?
+
+```text
+schtasks.exe /Create
+```
+
+### Was PowerShell involved?
+
+```text
+powershell.exe
+```
+
+### Was SYSTEM used?
+
+```text
+/ru system
+```
+
+### Was execution hidden?
+
+```text
+-W hidden
+```
+
+### Was code downloaded?
+
+```text
+DownloadString()
+```
+
+### Was code executed dynamically?
+
+```text
+IEX
+```
+
+## Possible Outcomes
+
+### Low Risk
+
+Legitimate administration.
+
+### Medium Risk
+
+Requires analyst review.
+
+### High Risk
+
+Potential persistence mechanism.
+
+### Critical
+
+Escalate for incident response.
