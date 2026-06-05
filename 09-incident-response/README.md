@@ -2,144 +2,132 @@
 
 ## Overview
 
-This section documents hands-on Incident Response investigations conducted within the SOC Detection Engineering, Threat Hunting, and Incident Response Lab.
+This section documents hands-on Incident Response investigations performed within the lab environment.
 
-The projects focus on identifying, investigating, analyzing, and responding to suspicious activity using Windows telemetry, Sysmon data, Splunk investigations, threat intelligence, and MITRE ATT&CK techniques.
+Projects focus on identifying malicious activity, collecting evidence, validating attacker behavior, and mapping findings to the MITRE ATT&CK framework.
 
-The objective is to develop practical incident response skills aligned with real-world SOC and Incident Response workflows.
+The investigations combine Windows Event Logs, Sysmon telemetry, PowerShell analysis, persistence detection, lateral movement validation, and incident response methodologies.
 
 ---
 
-## Incident Response Lifecycle
+## Incident Response Workflow
 
 ```text
-Alert Detected
-      ↓
-Triage
-      ↓
-Investigation
-      ↓
-Analysis
-      ↓
-Containment
-      ↓
-Eradication
-      ↓
-Recovery
-      ↓
-Lessons Learned
+Alert or Suspicious Activity
+            ↓
+Evidence Collection
+            ↓
+Log Analysis
+            ↓
+Threat Identification
+            ↓
+Investigation & Validation
+            ↓
+Containment Strategy
+            ↓
+Incident Response Assessment
 ```
 
 ---
 
 ## Projects
 
-### 01 – Windows Event Log Investigation
+### 01 – Lateral Movement Investigation
 
-Investigation of Windows Security Event Logs including:
-
-* Event ID 4624 (Successful Logon)
-* Event ID 4625 (Failed Logon)
-* Event ID 4688 (Process Creation)
+Investigation of remote activity between Windows and Kali Linux systems.
 
 Focus Areas:
 
-* Authentication Analysis
-* User Activity Investigation
-* Log Correlation
-* Timeline Creation
+* Windows Event ID 4688 Analysis
+* WMI Remote Execution
+* SSH Activity Validation
+* Reverse Tunnel Investigation
+* MITRE ATT&CK Mapping
 
-MITRE ATT&CK:
-
-* T1110 – Brute Force
-* T1550 – Use Alternate Authentication Material
-
----
-
-### 02 – PowerShell Incident Investigation
-
-Investigation of suspicious PowerShell activity.
-
-Focus Areas:
-
-* Encoded Commands
-* Download Cradles
-* Invoke-Expression (IEX)
-* Fileless Malware Techniques
-
-MITRE ATT&CK:
-
-* T1059.001 – PowerShell
-* T1027 – Obfuscated Files or Information
-
----
-
-### 03 – Lateral Movement Investigation
-
-Investigation of remote execution and lateral movement activity.
-
-Focus Areas:
-
-* WMI Activity
-* PsExec Activity
-* Remote Command Execution
-* Host-to-Host Correlation
-
-MITRE ATT&CK:
+Key Techniques:
 
 * T1021 – Remote Services
 * T1047 – Windows Management Instrumentation
+* T1572 – Protocol Tunneling
+
+---
+
+### 02 – Windows Persistence Investigation
+
+Investigation of Registry Run Key persistence using Atomic Red Team and custom hunting automation.
+
+Focus Areas:
+
+* Registry Persistence Analysis
+* Atomic Red Team Simulation
+* PowerShell Event ID 4104 Analysis
+* Python Persistence Hunting
+* Registry Validation
+
+Key Techniques:
+
+* T1547.001 – Registry Run Keys / Startup Folder
+* T1112 – Modify Registry
+
+---
+
+### 03 – Windows Event Log Investigation
+
+Investigation of Windows Security and Operational logs to identify suspicious activity and validate security events.
+
+Focus Areas:
+
+* Security Event Analysis
+* Event Correlation
+* Log Validation
+* Evidence Collection
+* Investigation Workflow
 
 ---
 
 ### 04 – Sysmon Process Investigation
 
-Investigation of process execution telemetry collected through Sysmon.
+Investigation of process creation activity using Sysmon telemetry.
 
 Focus Areas:
 
-* Event ID 1 (Process Creation)
-* Event ID 3 (Network Connections)
-* Event ID 13 (Registry Modifications)
-* Parent-Child Process Analysis
-
-MITRE ATT&CK:
-
-* T1036 – Masquerading
-* T1055 – Process Injection
+* Process Creation Analysis
+* Parent-Child Relationships
+* Command-Line Review
+* Process Execution Validation
+* Sysmon Event Analysis
 
 ---
 
 ### 05 – Incident Response Playbook
 
-Development of a structured incident response workflow.
+Standardized incident response workflow used throughout the lab.
 
 Focus Areas:
 
-* Alert Triage
-* Investigation Procedures
-* Containment Actions
-* Escalation Decisions
+* Detection
+* Investigation
+* Evidence Collection
+* Containment
+* Eradication
+* Recovery
 * Lessons Learned
-
-MITRE ATT&CK:
-
-* Multi-Technique Response Workflow
 
 ---
 
 ## Skills Demonstrated
 
 * Incident Response
-* Threat Hunting
-* Log Analysis
-* PowerShell Investigation
-* Sysmon Analysis
-* Windows Event Analysis
-* Process Investigation
-* Timeline Reconstruction
+* Security Monitoring
+* Windows Event Log Analysis
+* Sysmon Investigation
+* PowerShell Analysis
+* Persistence Detection
+* Lateral Movement Investigation
+* Evidence Collection
 * MITRE ATT&CK Mapping
-* SOC Operations
+* Threat Hunting
+* Security Operations
 
 ---
 
@@ -147,15 +135,18 @@ MITRE ATT&CK:
 
 * Splunk Enterprise
 * Sysmon
-* Windows
+* Windows 7
+* Windows 11
 * Kali Linux
-* Sigma
-* MISP
+* Atomic Red Team
+* PowerShell
+* Python
 * MITRE ATT&CK
-* BOTSv3 Dataset
 
 ---
 
-## Key Learning Outcome
+## Key Lesson
 
-> Effective incident response is built upon visibility, investigation methodology, and evidence-based decision making.
+> Effective incident response depends on accurate evidence collection, thorough investigation, and the ability to correlate activity across multiple data sources.
+
+These projects demonstrate practical incident response workflows used to identify, investigate, and validate malicious activity within a controlled lab environment.
