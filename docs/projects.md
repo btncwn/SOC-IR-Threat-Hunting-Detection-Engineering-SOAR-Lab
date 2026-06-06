@@ -12,7 +12,7 @@ This portfolio documents the development of a complete SOC Detection Engineering
 
 ## Repository Structure
 
-![Repository Structure](repository-structure.png)
+![Repository Structure](tree.png)
 
 
 # Core Technologies
