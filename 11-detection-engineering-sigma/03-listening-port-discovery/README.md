@@ -80,7 +80,13 @@ See:
 ```text
 sigma-rule.yml
 ```
+## Sigma Rule Development
 
+The Sigma rule was created to identify listening port discovery activity that may indicate reconnaissance or unauthorized network service exposure.
+
+### Evidence
+
+![Sigma Rule Creation](screenshots/01-sigma-rule-creation.png)
 ### Sigma ATT&CK Tags
 
 | Sigma Tag        | MITRE ATT&CK Mapping                 |
@@ -100,10 +106,14 @@ Generated SPL:
 (Image="*\\findstr.exe" CommandLine="*LISTENING*") OR CommandLine="*netstat -nao*"
 ```
 
----
 
 ## Detection Validation
 
+The detection logic was validated against available telemetry to confirm accurate identification of listening port discovery behaviour.
+
+### Evidence
+
+![Detection Validation](screenshots/02-detection-validation.png)
 ### Initial Threat Hunting Results
 
 A broad threat hunting search identified:
