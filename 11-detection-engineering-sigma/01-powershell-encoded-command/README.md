@@ -123,7 +123,13 @@ index=botsv3 sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" "p
 ```
 
 ---
+## Sigma Rule Development
 
+The Sigma rule was developed to identify PowerShell encoded command execution activity.
+
+### Evidence
+
+![Sigma Rule Creation](screenshots/01-sigma-rule-creation.png)
 ## Detection Results
 
 The detection successfully identified PowerShell executions containing encoded commands.
@@ -138,7 +144,7 @@ Observed activity included:
 
 The identified event contained an encoded command that downloaded and executed content from an external source, a behavior commonly associated with malware delivery and command execution.
 
----
+
 
 ## MITRE ATT&CK Mapping
 
@@ -148,7 +154,6 @@ The identified event contained an encoded command that downloaded and executed c
 | Defense Evasion     | T1027     | Obfuscated Files or Information |
 | Command and Control | T1105     | Ingress Tool Transfer           |
 
----
 
 ## Validation Challenges
 
@@ -187,7 +192,13 @@ BOTSv3 SPL Tuned
                 ↓
 Detection Validated
 ```
+## Detection Validation
 
+The rule was converted and validated against available telemetry to confirm detection capability.
+
+### Evidence
+
+![Detection Validation](screenshots/02-detection-validation.png)
 ---
 
 ## Analyst Assessment
