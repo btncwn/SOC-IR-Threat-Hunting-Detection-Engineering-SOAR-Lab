@@ -4,7 +4,7 @@
 
 ### Evidence
 
-![Finding 01](01-misp-feed-enabled.png)
+![Finding 01](screenshots/01-misp-feed-enabled.png)
 
 ### Observation
 
@@ -27,7 +27,7 @@ Feed synchronization populated the MISP instance with external threat intelligen
 
 ### Evidence
 
-![Finding 02](02-misp-hash-search.png)
+![Finding 02](screenshots/02-misp-hash-search.png)
 
 ### Observation
 
