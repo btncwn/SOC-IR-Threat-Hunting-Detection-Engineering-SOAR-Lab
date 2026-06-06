@@ -1,10 +1,19 @@
 [Home](index.md) | [About](about.md) | [Certifications](certifications.md) | [Projects](projects.md) | [Contact](contact.md)
 
----
+
 
 # SOC Project Portfolio
 
 This portfolio documents the development of a complete SOC Detection Engineering, Threat Hunting, Incident Response, Threat Intelligence, and SOAR Automation lab environment.
+
+# SOC Project Portfolio
+
+This portfolio documents the development of a complete SOC Detection Engineering, Threat Hunting, Incident Response, Threat Intelligence, and SOAR Automation lab environment.
+
+## Repository Structure
+
+![Repository Structure](repository-structure.png)
+
 
 # Core Technologies
 
@@ -29,13 +38,11 @@ This portfolio documents the development of a complete SOC Detection Engineering
 * Incident Response
 * SOAR Automation
 
----
 
 # 01 - Lab Architecture
 
 Design and implementation of the lab environment including Splunk, Windows, Kali Linux, and supporting security tools.
 
----
 
 # 02 - Vulnerability Assessment
 
@@ -48,7 +55,6 @@ Projects include:
 * Remediation recommendations
 * Security assessment reporting
 
----
 
 # 03 - Attack Simulation
 
@@ -61,7 +67,6 @@ Projects include:
 * PowerShell Execution
 * Remote Execution Simulation
 
----
 
 # 04 - Endpoint Telemetry
 
@@ -74,7 +79,6 @@ Projects include:
 * Event analysis
 * Process monitoring
 
----
 
 # 05 - Splunk Ingestion
 
@@ -87,7 +91,6 @@ Projects include:
 * Data validation
 * Search optimization
 
----
 
 # 06 - Threat Hunting
 
@@ -101,7 +104,6 @@ Projects include:
 * Network activity analysis
 * Attack timeline reconstruction
 
----
 
 # 07 - MITRE ATT&CK Mapping
 
@@ -113,7 +115,6 @@ Projects include:
 * Detection coverage analysis
 * Technique documentation
 
----
 
 # 08 - Threat Intelligence
 
@@ -127,7 +128,7 @@ Projects include:
 * MISP enrichment
 * Threat intelligence driven hunting
 
----
+
 
 # 09 - Incident Response
 
@@ -157,17 +158,12 @@ Projects include:
 * Incident Response Procedures
 * MITRE ATT&CK Mapping
 
----
-
-
----
 
 
 # 10 - SOC Investigations
 
 End-to-end SOC investigations combining telemetry, threat intelligence, and analyst workflows.
 
----
 
 # 11 - Detection Engineering with Sigma
 
@@ -186,8 +182,6 @@ Projects include:
 * Detection Tuning
 * MITRE ATT&CK Mapping
 * Behavioral Detection Engineering
-
----
 
 # 12 - SOAR Automation
 
