@@ -127,8 +127,6 @@ Projects include:
 * MISP enrichment
 * Threat intelligence driven hunting
 
-
-
 # 09 - Incident Response
 
 Hands-on Incident Response investigations focused on attacker behaviour validation, evidence collection, log analysis, and MITRE ATT&CK mapping.
@@ -140,24 +138,6 @@ Projects include:
 * Low and Slow UDP Exfiltration
 * Fileless PowerShell Beacon Investigation
 * Incident Response Playbook
-
-Projects include:
-
-* WMI Execution Analysis
-* Event ID 4688 Investigation
-* Event ID 4104 Analysis
-* Registry Persistence Detection
-* PowerShell Analysis
-* SSH Activity Validation
-* Reverse Tunnel Assessment
-* UDP Traffic Analysis
-* Wireshark Packet Validation
-* Command and Control Detection
-* Evidence Collection
-* Incident Response Procedures
-* MITRE ATT&CK Mapping
-
-
 
 # 10 - SOC Investigations
 
