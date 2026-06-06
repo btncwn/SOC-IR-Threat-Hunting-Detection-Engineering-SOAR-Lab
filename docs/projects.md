@@ -14,7 +14,6 @@ This portfolio documents the development of a complete SOC Detection Engineering
 
 ![Repository Structure](tree.png)
 
-
 # Core Technologies
 
 * Splunk Enterprise
