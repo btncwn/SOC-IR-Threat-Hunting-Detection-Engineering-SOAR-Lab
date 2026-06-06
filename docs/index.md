@@ -1,6 +1,5 @@
 [Home](index.md) | [About](about.md) | [Certifications](certifications.md) | [Projects](projects.md) | [Contact](contact.md)
-# Turhan Acar
-
+This portfolio documents a hands-on SOC, Incident Response, Threat Hunting, Detection Engineering, Threat Intelligence, and SOAR Automation lab. 
 ## SOC Analyst | Threat Hunter | Detection Engineering | IR
 
 Welcome to my cybersecurity portfolio.
