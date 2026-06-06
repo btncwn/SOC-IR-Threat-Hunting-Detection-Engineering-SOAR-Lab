@@ -6,7 +6,6 @@ This phase focused on collecting Windows endpoint telemetry and successfully ing
 
 The objective was to establish a reliable SIEM pipeline capable of receiving, parsing, indexing, and searching Sysmon-generated security events.
 
----
 
 ## Architecture
 
@@ -19,8 +18,6 @@ Splunk Universal Forwarder
 Splunk Enterprise
 ↓
 SOC Dashboard & Threat Hunting
-
----
 
 ## Environment
 
@@ -35,7 +32,6 @@ SOC Dashboard & Threat Hunting
 * Splunk Enterprise
 * Local Deployment (macOS)
 
----
 
 ## Data Sources
 
@@ -54,7 +50,6 @@ Key Event Types:
 * Event ID 3 – Network Connections
 * Event ID 5 – Process Termination
 
----
 
 ## Ingestion Challenges
 
@@ -95,8 +90,6 @@ Examples included:
 
 This enabled meaningful threat hunting and dashboard creation.
 
----
-
 ## Telemetry Validation
 
 The ingestion pipeline was validated by confirming:
@@ -107,7 +100,7 @@ The ingestion pipeline was validated by confirming:
 * Search visibility
 * Dashboard population
 
-More than 17,000 Sysmon events were successfully indexed and analyzed.
+More than 18,988 Sysmon events were successfully indexed and analyzed.
 ## Ingestion Validation
 
 Sysmon telemetry generated on the Windows 7 endpoint was successfully forwarded to Splunk Enterprise using the Splunk Universal Forwarder.
@@ -130,7 +123,6 @@ The completed ingestion pipeline enabled:
 * Parent-Child Process Analysis
 * SOC Dashboard Development
 
----
 
 ## Lessons Learned
 
@@ -144,8 +136,6 @@ The project demonstrated the importance of:
 * Endpoint telemetry quality assurance
 
 A successful ingestion pipeline is the foundation of effective threat detection and security monitoring.
-
----
 
 ## Outcome
 
