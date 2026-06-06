@@ -8,7 +8,14 @@ The project uses intelligence associated with the Space Pirates threat actor and
 
 Rather than focusing solely on indicators of compromise such as hashes, domains, or IP addresses, this project emphasizes behavioral detections that remain effective even when attacker infrastructure changes.
 
----
+## Threat Intelligence Analysis
+
+The investigation began with threat intelligence analysis to identify indicators and attacker behaviour relevant to the detection objective.
+
+### Evidence
+
+![Threat Intelligence Analysis](screenshots/01-threat-intelligence-analysis.png)
+
 
 # Threat Intelligence Source
 
@@ -123,7 +130,15 @@ T1059.001
 T1027
 ```
 
----
+## Sigma Rule Development
+
+A Sigma rule was developed to detect the identified behaviour and provide a portable detection format.
+
+### Evidence
+
+![Sigma Rule Creation](screenshots/02-sigma-rule-creation.png)
+
+
 
 ## 2. Scheduled Task Persistence
 
@@ -210,12 +225,23 @@ The `--without-pipeline` option was used to observe raw Sigma-to-Splunk translat
 
 This allowed direct validation of detection logic and SPL generation.
 
----
 
+## PySigma Conversion
+
+The Sigma rule was converted into Splunk SPL using PySigma to support validation within the SIEM environment.
+
+### Evidence
+
+![PySigma Conversion](screenshots/03-pysigma-conversion.png)
 # Detection Validation
 
 Each Sigma rule was converted and validated against available BOTSv3 telemetry.
 
+The converted detection was validated against available telemetry to confirm effectiveness and expected alert generation.
+
+### Evidence
+
+![Detection Validation](screenshots/04-detection-validation.png)
 The validation process demonstrated that:
 
 * Sigma rules can be translated into Splunk SPL
