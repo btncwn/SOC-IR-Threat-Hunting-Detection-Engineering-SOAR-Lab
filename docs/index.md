@@ -1,9 +1,10 @@
 [Home](index.md) | [About](about.md) | [Certifications](certifications.md) | [Projects](projects.md) | [Contact](contact.md)
-# Turhan Acar
 
 ## SOC Analyst | Threat Hunter | Detection Engineering | IR
 
-Welcome to my cybersecurity portfolio.
+Welcome to my cybersecurity portfolio. 
+
+This portfolio documents a hands-on SOC, Incident Response, Threat Hunting, Detection Engineering, Threat Intelligence, and SOAR Automation lab. 
 
 This website documents hands-on security projects focused on:
 
@@ -17,7 +18,6 @@ This website documents hands-on security projects focused on:
 * PySigma
 * SOAR Automation
 
----
 
 ## Current Lab
 
@@ -25,7 +25,6 @@ This website documents hands-on security projects focused on:
 
 A hands-on SOC lab focused on vulnerability assessment, attack simulation, endpoint telemetry, Splunk ingestion, threat hunting, MITRE ATT&CK mapping, threat intelligence, IR, detection engineering, and SOAR automation.
 
----
 
 ## Portfolio Sections
 
@@ -40,8 +39,6 @@ A hands-on SOC lab focused on vulnerability assessment, attack simulation, endpo
 * SOC Investigations
 * Detection Engineering with Sigma
 * SOAR Automation
-
----
 
 ## Featured Investigations
 
@@ -67,7 +64,6 @@ Transformation of Space Pirates and PlugX RAT threat intelligence into behaviora
 
 This portfolio demonstrates the full SOC workflow:
 
-```text
 Threat Hunting
       ↓
 Threat Intelligence
@@ -82,7 +78,7 @@ Splunk Validation
       ↓
 SOC Investigation
       ↓
-```
+
 
 Core lesson:
 
