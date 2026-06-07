@@ -1,0 +1,1 @@
+../11-detection-engineering-sigma/06-smb-lateral-movement/README.md
